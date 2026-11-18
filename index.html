@@ -100,9 +100,10 @@
   /* ================= OFFICIAL A4 SHEET (matches the NIRA PDF) ================= */
   .page-wrapper { display: none; justify-content: center; padding: 16px 8px 40px; }
   .page-wrapper.on { display: flex; }
+  .notified { text-align: right; font-size: 8pt; line-height: 1.2; margin-top: 1.5mm; }
   .sheet { width: 210mm; height: 297mm; background: #fff; padding: 9mm 12mm; box-shadow: 0 8px 28px rgba(0,0,0,.2); font-family: Arial, Helvetica, sans-serif; font-size: 9.6pt; color: #000; flex: none; overflow: hidden; }
   .sheet-head { text-align: center; margin-bottom: 3mm; }
-  .sheet-head img { height: 17mm; width: auto; display: block; margin: 0 auto 2.5mm; }
+  .sheet-head img { height: 16mm; width: auto; display: block; margin: 0 auto 2.5mm; }
   .sheet-head h1 { margin: 0; font-size: 15pt; font-weight: 800; letter-spacing: .2px; }
   .grid { border-top: 1px solid #000; border-left: 1px solid #000; }
   .row { display: grid; }
@@ -116,10 +117,12 @@
   .note { font-size: 7.4pt; font-style: italic; }
   .in { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; padding: 0; margin: 0; font-family: var(--hand); font-size: 11pt; line-height: 1.1; color: #000; }
   .in:focus { background: #fef9c3; }
+  /* Everything typed on the official A4 sheet prints in CAPITALS (saved data keeps what was typed) */
+  .sheet .in, .sheet .dl { text-transform: uppercase; }
   #tracking { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; letter-spacing: .2px; }
   .seg { display: flex; align-items: center; gap: 1mm; font-weight: 700; }
   .seg .in { text-align: center; }
-  .decl { border: 1px solid #000; border-top: 0; padding: 4.5mm 6mm 6mm; line-height: 2.05; font-size: 9.6pt; }
+  .decl { border: 1px solid #000; border-top: 0; padding: 3mm 6mm 3mm; line-height: 1.7; font-size: 9.6pt; }
   .dl { border: 0; border-bottom: 1px solid #000; background: transparent; font-family: var(--hand); font-size: 11pt; padding: 0 1mm; outline: 0; vertical-align: baseline; max-width: 100%; }
   .dl:focus { background: #fef9c3; }
 
@@ -175,8 +178,11 @@
       <h1>NOTICE OF BIRTH OF A CHILD</h1>
     </div>
     <div id="sheetBody"></div>
+    <div class="notified">Notified by<br><b>KIBET EMMANUEL</b><br>Registration Assistant - NIRA, Amudat</div>
   </form>
 </main>
+
+<footer class="no-print" style="text-align:center;padding:14px 8px 28px;font-size:12px;color:#6b7280">Online form by Kibet Emma (Domos)</footer>
 
 <script>
 /* ===================== helpers to build the A4 sheet ===================== */
